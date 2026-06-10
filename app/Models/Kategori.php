@@ -1,21 +1,12 @@
 <?php
-
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Kategori extends Model
 {
-    use HasFactory;
-
-    protected $table = 'kategori';
-    public $timestamps = false;
+    // Mengunci nama tabel agar Laravel membaca 'kategori' (tanpa huruf S)
+    protected $table = 'kategori'; 
 
     protected $fillable = ['nama_kategori'];
-
-    public function buku()
-    {
-        return $this->hasMany(Buku::class, 'kategori_id');
-    }
 }
